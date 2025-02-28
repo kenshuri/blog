@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-2%rydirhvzb1#%il_iq7azm2l0sb0l3fdf@+n20=#%d@+m5bm$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blog-production-0709.up.railway.app',
+                 'blog.kenshuri.com',]
 
 
 # Application definition
@@ -137,5 +138,5 @@ MARKDOWNIFY = {
 }
 
 # HTMX
-CSRF_TRUSTED_ORIGINS = ['https://*.kenshuri.com','https://*.127.0.0.1', 'https://*.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.kenshuri.com','https://*.127.0.0.1', 'https://*.blog-production-0709.up.railway.app']
 
