@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'markdownify.apps.MarkdownifyConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Markdownify settings
+MARKDOWNIFY = {
+    "default": {
+        "MARKDOWN_EXTENSIONS": [
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+        ],
+        "BLEACH": False,
+    }
+}
+
+# HTMX
+CSRF_TRUSTED_ORIGINS = ['https://*.kenshuri.com','https://*.127.0.0.1', 'https://*.railway.app']
+

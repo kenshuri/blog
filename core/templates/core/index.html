@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% load markdownify %}
+
+{% block title %}
+    Kenshuri's blog
+{% endblock title %}
+
+{% block main %}
+    <div class="hero min-h-screen" style="background-image: url('{{ cover }}');">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+                <p class="mb-5">Welcome on my blog! It's an archive of stuff I'd like to keep track of: code, plays, books...</p>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

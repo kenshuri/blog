@@ -2,6 +2,14 @@
 
 ## DEV
 
+### Updates
+
+#### DaisyUI
+
+```shell
+npm i -D daisyui@latest
+```
+
 ### Aliases
 
 #### Useful Aliases

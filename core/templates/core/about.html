@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}
+    Kenshuri's about
+{% endblock title %}
+
+{% block main %}
+    <div class="min-h-screen max-w-3xl mx-auto lg:max-w-4xl xl:max-w-6xl place-content-start ">
+        <div class="mx-auto bg-base-100 rounded-box grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl">
+            <div tabindex="0">
+                <div class="online avatar">
+                    <div class="mask mask-squircle bg-base-content h-24 w-24 bg-opacity-10 p-px">
+                        <img src="{% static "images/minion_head.jpg" %}" width="94" height="94" alt="Avatar Tailwind CSS Component" class="mask mask-squircle">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div tabindex="0">
+                    <div class="text-center">
+                        <div class="text-lg font-extrabold">Kenshuri</div>
+                        <div class="text-base-content/70 my-3 text-sm">
+                            Hobbyist developer
+                            <br>
+                            Free-time lover
+                            <br>
+                            Books reader
+                        </div>
+                    </div>
+                </div>
+                <div tabindex="0">
+                    <div class="mt-2 text-center">
+                        <div class="badge badge-ghost">Code</div>
+                        <div class="badge badge-ghost">Books</div>
+                    </div>
+                </div>
+            </div>
+            <div tabindex="0" class="flex flex-row text-sm">
+                Find me on
+                <div class="ml-2 grid grid-flow-col gap-2 mt-1">
+                    <a href="mailto:kenshuri.blog@gmail.com" class="fa-solid fa-envelope"></a>
+                    <a href="https://github.com/kenshuri" class="fa-brands fa-github"></a>
+                    <a href="https://stackoverflow.com/users/13371166/kenshuri" class="fa-brands fa-stack-overflow"></a>
+                    <a href="https://app.mobalytics.gg/lol/profile/euw/kenshuri33b/overview" class="fas fa-gamepad"></a>
+                </div>
+            </div>
+            <div tabindex="0" class="flex flex-row text-sm">
+                Support me on <a class="ml-1" href="https://ko-fi.com/A0A6DWS9U"><i class="fa-solid fa-mug-hot"></i></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (event) => {
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+    </script>
+{% endblock %}

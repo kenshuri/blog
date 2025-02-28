@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+{% load markdownify %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block main %}
+    <div class="">
+        <article class="prose md:prose-md lg:prose-lg mx-auto max-w-2xl lg:max-w-3xl">
+            {{ date }}
+            {{ post_md|markdownify }}
+        </article>
+    </div>
+{% endblock main %}

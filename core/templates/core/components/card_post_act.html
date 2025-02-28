@@ -1,0 +1,21 @@
+{% load static %}
+<div class="card card-side bg-base-100 shadow-xl h-64">
+  <figure class="object-cover"><img src="{% get_static_prefix %}images/act/{{ post.image }}" alt="{{ post.title }}"/></figure>
+  <div class="card-body">
+    <h2 class="card-title">{{ post.title }}</h2>
+    <p>{{ post.summary }}</p>
+    <div class="flex flex-row justify-between items-end gap-4">
+            <div class="italic text-sm">
+                {{ post.date }}
+            </div>
+            <div class="card-actions">
+                <div class="badge badge-outline"><span class="fas fa-masks-theater mr-2"></span>{{ post.badge }}</div>
+            </div>
+            <div class="card-actions">
+                <a href="{{ post.postname }}" class="flex">
+                <button class="btn btn-primary">Read</button>
+                </a>
+            </div>
+        </div>
+  </div>
+</div>

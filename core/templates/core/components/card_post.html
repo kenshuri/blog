@@ -1,0 +1,19 @@
+<div class="card card-side bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+        <p>{{ post.summary }}</p>
+        <div class="flex flex-row justify-between items-end">
+            <div class="italic text-sm">
+                {{ post.date }}
+            </div>
+            <div class="card-actions">
+                <div class="badge badge-outline"><span class="fas fa-code mr-2"></span>{{ post.badge }}</div>
+            </div>
+            <div class="card-actions">
+                <a href="{{ post.postname }}" class="flex">
+                <button class="btn btn-primary">Read</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

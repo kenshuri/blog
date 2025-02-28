@@ -1,0 +1,73 @@
+{% extends "core/base.html" %}
+{% load markdownify %}
+
+{% block title %}
+    Kenshuri's books
+{% endblock title %}
+
+{% block main %}
+    <div class="min-h-screen max-w-3xl mx-auto lg:max-w-4xl xl:max-w-6xl place-content-start">
+        <div class="my-4 flex flex-row justify-center">
+            <p>
+                Below are listed all books read since 2020. Covers, when available, had been downloaded from <a class="underline" href="https://openlibrary.org/dev/docs/api/covers">OpenLibrary</a>.
+            </p>
+        </div>
+        <div class="flex flex-col items-center justify-center my-4 gap-4 sm:flex-row">
+            {#    Search Options#}
+            <div>
+                <input type="text"
+                       name="search"
+                       hx-post="{% url 'book_search' %}"
+                       hx-target = "#id_books"
+                       hx-trigger = "keyup changed delay:ms"
+                       placeholder="Search for books"
+                       class="input input-bordered w-full max-w-xs">
+            </div>
+
+            <div class="navbar-center">
+                <ul class="menu menu-horizontal bg-base-100 rounded-box">
+                    <li>
+                        <div class="flex flex-row justify-around gap-0"
+                             hx-post="1" hx-trigger="click" hx-target="#id_books">
+                            1<i class="fa-solid fa-star mb-2"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex flex-row justify-around gap-0"
+                             hx-post="2" hx-trigger="click" hx-target="#id_books">
+                            2<i class="fa-solid fa-star mb-2"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex flex-row justify-around gap-0"
+                             hx-post="3" hx-trigger="click" hx-target="#id_books">
+                            3<i class="fa-solid fa-star mb-2"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex flex-row justify-around gap-0"
+                             hx-post="4" hx-trigger="click" hx-target="#id_books">
+                            4<i class="fa-solid fa-star mb-2"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex flex-row justify-around gap-0"
+                             hx-post="5" hx-trigger="click" hx-target="#id_books">
+                            5<i class="fa-solid fa-star mb-2"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="id_books" class="flex flex-wrap gap-2 place-content-center">
+            {% for book in books %}
+                {% include "core/components/card_book.html" with book=book only %}
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (event) => {
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+    </script>
+{% endblock %}

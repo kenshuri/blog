@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+{% load markdownify %}
+
+{% block title %}
+    Kenshuri's posts
+{% endblock title %}
+
+{% block main %}
+    <div class="min-h-screen max-w-3xl mx-auto lg:max-w-4xl xl:max-w-6xl place-content-start">
+        <div class="flex flex-col gap-2">
+            <div class="flex flex-row place-content-center w-full">
+                {#                <ul class="menu menu-horizontal bg-base-100 p-2 rounded-box">#}
+                {#                    <li>#}
+                {#                        <div class="flex flex-row active">#}
+                {#                            <span class="fa-solid fa-list-ul"></span>#}
+                {#                            <span class="hidden sm:inline-block">All</span>#}
+                {#                        </div>#}
+                {#                    </li>#}
+                {#                    <li>#}
+                {#                        <div class="flex flex-row">#}
+                {#                            <span class="fas fa-code"></span>#}
+                {#                            <span class="hidden sm:inline-block">Code</span>#}
+                {#                        </div>#}
+                {#                    </li>#}
+                {#                    <li>#}
+                {#                        <div class="flex flex-row">#}
+                {#                            <span class="fas fa-book"></span>#}
+                {#                            <span class="hidden sm:inline-block">Book</span>#}
+                {#                        </div>#}
+                {#                    </li>#}
+                {#                    <li>#}
+                {#                        <div class="flex flex-row">#}
+                {#                            <span class="fas fa-globe-africa"></span>#}
+                {#                            <span class="hidden sm:inline-block">Climate</span>#}
+                {#                        </div>#}
+                {#                    </li>#}
+                {#                    <li>#}
+                {#                        <div class="flex flex-row">#}
+                {#                            <span class="fas fa-landmark"></span>#}
+                {#                            <span class="hidden sm:inline-block">Finance</span>#}
+                {#                        </div>#}
+                {#                    </li>#}
+                {#                </ul>#}
+            </div>
+            <div class="flex flex-col items-center justify-center my-4 gap-4 sm:flex-row">
+                {#    Search Options#}
+                <div class="flex">
+                    <label for="search"><span class="font-bold">Search for posts</span> by title, summary or badge</label>
+                    <input type="text"
+                           name="search"
+                           hx-post="{% url 'post_search' %}"
+                           hx-target = "#id_posts"
+                           hx-trigger = "keyup changed delay:ms"
+                           placeholder="django, la colline, code..."
+                           class="input input-bordered w-full max-w-xs">
+                </div>
+            </div>
+            <div id="id_posts" class="flex flex-col gap-2 lg:mx-16 xl:mx-32" >
+                {% for post in posts %}
+                    {% if post.badge == 'act' %}
+                        {% include "core/components/card_post_act.html" with post=post only %}
+                    {% else %}
+                        {% include "core/components/card_post.html" with post=post only %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (event) => {
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-2 lg:mx-16 xl:mx-32" >
+    {% for post in posts %}
+        {% if post.badge == 'act' %}
+            {% include "core/components/card_post_act.html" with post=post only %}
+        {% else %}
+            {% include "core/components/card_post.html" with post=post only %}
+        {% endif %}
+    {% endfor %}
+</div>

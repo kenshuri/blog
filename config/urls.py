@@ -17,6 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import core.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', core.views.index, name='index'),
+    path('posts/', core.views.posts, name='posts'),
+    path('posts/<str:postname>', core.views.view_post, name='view_post'),
+    path('books/', core.views.books, name='books'),
+    path('about/', core.views.about, name='about'),
+    # path('__reload__/', include('django_browser_reload.urls')),
 ]
+
+htmx_urlpatterns = [
+    path('post_search/', core.views.post_search, name='post_search'),
+    path('book_search/', core.views.book_search, name='book_search'),
+    path('books/<int:stars>', core.views.book_filter, name='book_filter'),
+]
+
+urlpatterns += htmx_urlpatterns

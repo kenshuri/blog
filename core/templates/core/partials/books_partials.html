@@ -1,0 +1,5 @@
+<div class="flex flex-wrap gap-2 place-content-center">
+    {% for book in books %}
+        {% include "core/components/card_book.html" with book=book only %}
+    {% endfor %}
+</div>

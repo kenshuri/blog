@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+{% load markdownify %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block main %}
+<div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row">
+        {% load static %}
+        <img src="{% static "images/pexels-jens-johnsson-66100.jpg" %}" class="max-w-sm rounded-lg shadow-2xl"
+             title="Photo de Jens Johnsson: https://www.pexels.com/fr-fr/photo/fleche-en-bois-marron-signee-66100/"
+             alt="Signpost without text to refer to being lost"
+        />
+        <div>
+            <h1 class="text-5xl font-bold">You're lost!</h1>
+            <p class="py-6">
+                You're looking for a post that does not exist! Go to <a class="underline" href="{% url 'posts' %}">this page</a> to see the full list of existing posts...
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock main %}
