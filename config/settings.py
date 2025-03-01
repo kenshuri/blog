@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-2%rydirhvzb1#%il_iq7azm2l0sb0l3fdf@+n20=#%d@+m5bm$
 DEBUG = True
 
 ALLOWED_HOSTS = ['blog-production-0709.up.railway.app',
-                 'blog.kenshuri.com',]
+                 'blog.kenshuri.com',
+                 '127.0.0.1']
 
 
 # Application definition

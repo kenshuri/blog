@@ -12,3 +12,8 @@ dependencies = [
     "python-frontmatter>=1.1.0",
     "whitenoise>=6.9.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pygments>=2.19.1",
+]

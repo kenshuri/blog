@@ -183,7 +183,7 @@ Then, we need to follow the steps descibed [here](https://python-markdown.github
 
 ```shell
 pip install Pygments
-pygmentize -S default -f html -a .codehilite > codehilite.css
+pygmentize -S github-dark -f html -a .codehilite > codehilite.css
 ```
 
 Then move the newly created `codehilite.css` file in your `static\css` folder, and reference this new css file in your `base.html` template!
@@ -193,6 +193,13 @@ Then move the newly created `codehilite.css` file in your `static\css` folder, a
 ```
 
 Well done, it should now be working fine!
+
+I faced an error where the `css` file generated was not in utf-8 format, leading to a failure when running collecstatic.
+On windows, the previous command can be amended to:
+
+```shell
+pygmentize -S github-dark -f html -a .codehilite | Out-File -FilePath codehilite.css -Encoding utf8
+```
 
 ## Source code
 The source code relative to this project is available [here](https://github.com/kenshuri/render_md_with_tailwind_typography).
