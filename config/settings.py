@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['blog-production-0709.up.railway.app',
                  'blog.kenshuri.com',
-                 '127.0.0.1']
+                 '127.0.0.1',
+                 'blog-dev-205e.up.railway.app']
 
 
 # Application definition
