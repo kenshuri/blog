@@ -16,7 +16,31 @@ npm i -D daisyui@latest
 
 - `uvm`: `uv run manage.py`
 - `uvmr`: `uv run manage.py runserver`
+- `twb` : `npm run tailwind-build`
+- `dev` : Start tailwind-watch and runserver
 
+#### Profile
+
+```Profile
+Remove-Item Alias:curl -Force
+Function uvm {
+    python manage.py $args
+}
+Function uvmr {
+    python manage.py runserver
+}
+Function twb {
+    cd jstoolchains
+    npm run tailwind-build
+    cd ..
+}
+function dev {
+    cd jstoolchains
+    Start-Job -ScriptBlock { npm run tailwind-watch }
+    cd ..
+    python manage.py runserver
+}
+```
 
 #### Add new Aliases
 
