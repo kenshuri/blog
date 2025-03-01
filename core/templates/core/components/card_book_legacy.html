@@ -1,0 +1,55 @@
+{% load static %}
+{% if book.has_cover %}
+<div class="card w-64 h-72 bg-base-100 shadow-xl group">
+    <div class="relative">
+        <img class="absolute  object-contain w-64 h-72 opacity-100 group-hover:opacity-0 group-hover:translate-x-16 transform transition"
+             src="{% static book.cover %}"
+             alt="cover image for {{ book.title }}"
+        >
+        <div class="absolute card-body opacity-100 top-0 right-0">
+            <div class="card-title flex flex-row items-start">
+                <div class="flex flex-row opacity-100 p-1 bg-yellow-400 rounded-full">
+                    {{ book.my_rating }}<span class="fa-solid fa-star"></span>
+                </div>
+            </div>
+        </div>
+        <div class="absolute card-body opacity-0 group-hover:opacity-100 transform transition h-72">
+            <div class="card-title flex flex-row justify-between items-start">
+                <div>
+                    {{ book.title }}
+                </div>
+                <div class="flex flex-row opacity-0 p-1 bg-yellow-400 rounded-full">
+                    {{ book.my_rating }}<span class="fa-solid fa-star"></span>
+                </div>
+            </div>
+            <p>{{ book.author }}</p>
+            <div class="">
+                <div>ISBN: {{ book.isbn }}</div>
+                <div class="italic justify-end">
+                    Read on {{ book.date_read|date:"M. j, Y" }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="card w-64 h-72 bg-base-100 shadow-xl">
+    <div class="card-body">
+        <div class="card-title flex flex-row justify-between items-start">
+            <div>
+                {{ book.title }}
+            </div>
+            <div class="flex flex-row p-1 bg-yellow-400 rounded-full justify-center">
+                {{ book.my_rating }}<span class="fa-solid fa-star"></span>
+            </div>
+        </div>
+        <p>{{ book.author }}</p>
+        <div class="">
+            <div>ISBN: {{ book.isbn }}</div>
+            <div class="italic justify-end">
+                Read on {{ book.date_read|date:"M. j, Y" }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
