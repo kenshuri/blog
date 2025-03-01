@@ -186,7 +186,7 @@ pip install Pygments
 pygmentize -S github-dark -f html -a .codehilite > codehilite.css
 ```
 
-> Please note the `Pygments` is fully needed for it to work. It is not only used to create the `css` file.
+> Please note that `Pygments` is fully needed for it to work. It is not only used to create the `css` file.
 
 Then move the newly created `codehilite.css` file in your `static\css` folder, and reference this new css file in your `base.html` template!
 ```html
