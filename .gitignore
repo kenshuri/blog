@@ -173,3 +173,5 @@ cython_debug/
 # CUSTOM IGNORES
 jstoolchains/
 .idea/
+node_modules/
+jstoolchains/node_modules/
