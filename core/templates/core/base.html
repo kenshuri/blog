@@ -27,21 +27,21 @@
             <ul class="menu menu-horizontal bg-base-100 rounded-box">
                 <li>
                     {% if request.path == '/posts/' %}
-                        <a href={% url 'posts' %} class="active"><i class="fa-solid fa-newspaper"></i>Posts</a>
+                        <a href={% url 'posts' %} class="link-primary font-bold underline"><i class="fa-solid fa-newspaper"></i>Posts</a>
                     {% else %}
                         <a href={% url 'posts' %}><i class="fa-solid fa-newspaper"></i>Posts</a>
                     {% endif %}
                 </li>
                 <li>
                     {% if request.path == '/books/' %}
-                        <a href={% url 'books' %} class="active"><i class="fa-solid fa-book"></i>Books</a>
+                        <a href={% url 'books' %} class="link-primary font-bold underline"><i class="fa-solid fa-book"></i>Books</a>
                     {% else %}
                         <a href={% url 'books' %}><i class="fa-solid fa-book"></i>Books</a>
                     {% endif %}
                 </li>
                 <li>
                     {% if request.path == '/about/' %}
-                        <a href={% url 'about' %} class="active"><i class="fa-solid fa-address-card"></i>About</a>
+                        <a href={% url 'about' %} class="link-primary font-bold underline"><i class="fa-solid fa-address-card"></i>About</a>
                     {% else %}
                         <a href={% url 'about' %}><i class="fa-solid fa-address-card"></i>About</a>
                     {% endif %}
