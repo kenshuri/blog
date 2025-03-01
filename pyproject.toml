@@ -9,6 +9,7 @@ dependencies = [
     "gunicorn>=23.0.0",
     "pandas>=2.2.3",
     "psycopg[binary,pool]>=3.2.5",
+    "pygments>=2.19.1",
     "python-frontmatter>=1.1.0",
     "whitenoise>=6.9.0",
 ]

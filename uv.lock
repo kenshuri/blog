@@ -41,6 +41,7 @@ dependencies = [
     { name = "gunicorn" },
     { name = "pandas" },
     { name = "psycopg", extra = ["binary", "pool"] },
+    { name = "pygments" },
     { name = "python-frontmatter" },
     { name = "whitenoise" },
 ]
@@ -57,6 +58,7 @@ requires-dist = [
     { name = "gunicorn", specifier = ">=23.0.0" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "psycopg", extras = ["binary", "pool"], specifier = ">=3.2.5" },
+    { name = "pygments", specifier = ">=2.19.1" },
     { name = "python-frontmatter", specifier = ">=1.1.0" },
     { name = "whitenoise", specifier = ">=6.9.0" },
 ]
