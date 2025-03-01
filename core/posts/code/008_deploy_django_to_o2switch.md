@@ -11,12 +11,13 @@ image:
 ## Buy host
 
 **Steps**
+
 1. Git clone project to kenshuri.com
 2. Configure le domaine avec comme racine le dossiser cloné
 3. Créer une application python
-- Application Root = kenshuri.com --> le dossier racine
-- Application URL kenshuri.com
-- Modifier le fichier kenshuri.com/passenger_wsgi pour qu'il pointe vers le bon fichier wsgi
+   - Application Root = kenshuri.com --> le dossier racine
+   - Application URL kenshuri.com
+   - Modifier le fichier kenshuri.com/passenger_wsgi pour qu'il pointe vers le bon fichier wsgi
 
 ```wsgi
 import imp

@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
+    "django-browser-reload>=1.18.0",
     "django-markdownify>=0.9.5",
     "django>=5.1.6",
     "gunicorn>=23.0.0",
