@@ -47,3 +47,19 @@ DEFAULT_FROM_EMAIL = "your-email@example.com"  # Use an email associated with yo
 ```
 
 You're ready to go! 
+
+## **4. Receive email to your custom domain** 
+
+Has to be done in Cloudflare
+- Set-up domain 
+  - It will add several DNS entries: one of them is in conflict with the one used for SPF configuration
+  - Accepts the changes: it will break the SPF configuration
+  - Go to MailJet
+  - Check the SPF configuration: it proposes a change, that adds the MailJet SPF on top of the Cloudflare
+    - As in `"v=spf1 include:spf.mailjet.com include:_spf.mx.cloudflare.net ~all"`
+- Back in Cloudflare, Email Routing
+  - Check Destination Adress: You should see your domain
+- In Cloudflare, Règles d'acheminement
+  - Create a Custom Adress
+
+You're done !
