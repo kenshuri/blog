@@ -1,7 +1,7 @@
 ---
 title: Migrate domain from O2Switch to Clouflare
 summary: Migrate domain from O2Switch to Clouflare
-date: 2025-03-02
+date: 2050-03-02
 badge: code
 image:
 ---

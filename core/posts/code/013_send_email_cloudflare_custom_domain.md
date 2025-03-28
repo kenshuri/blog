@@ -51,6 +51,7 @@ You're ready to go!
 ## **4. Receive email to your custom domain** 
 
 Has to be done in Cloudflare
+
 - Set-up domain 
   - It will add several DNS entries: one of them is in conflict with the one used for SPF configuration
   - Accepts the changes: it will break the SPF configuration
