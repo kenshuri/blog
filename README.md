@@ -4,6 +4,13 @@
 
 ### Updates
 
+#### Books
+
+- Go to: https://www.goodreads.com/review/import
+- Save library as `goodreads_library_export.csv` 
+- Run `python manage.py get_covers`
+
+
 #### DaisyUI
 
 ```shell
