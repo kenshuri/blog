@@ -1,7 +1,7 @@
 ---
 title: Create your own local multimedia server
 summary: Install the arrs stack and jellyfin on Ubuntu server
-date: 2050-09-00
+date: 2050-09-01
 badge: code
 image:
 ---
